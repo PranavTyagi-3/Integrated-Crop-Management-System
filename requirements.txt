@@ -1,0 +1,12 @@
+joblib==1.2.0
+fastai==2.7.15
+pandas==2.1.4
+torch==2.3.0
+numpy==1.26.4
+matplotlib
+pathlib
+fastcore==1.5.33
+requests
+scipy==1.11.4
+fastprogress==1.0.3
+torchvision==0.18.0

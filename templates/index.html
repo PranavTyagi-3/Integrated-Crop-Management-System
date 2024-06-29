@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="static/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <section class="sec1">
+    <nav class="content"> 
+      <div class="nav-container">
+        <div class="logo-box">
+          <a href="#"><img src="static/img/logo.svg" alt="Logo"></a>
+        </div>
+        <div class="nav-links-box">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#aboutus">About</a></li>
+            <li><a href="#contactus">Contact Us</a></li>
+          </ul>
+        </div>
+        
+        <div class="contact-btn-box">
+          <a href="http://localhost:8501">
+          <button class="glow-on-hover" type="button">
+            Dashboard
+          </button>
+        </a>
+        </div>
+      </div>
+      <hr class="nav-hr">
+    </nav>
+    <div class="cont">
+      <div>
+        <br>
+        <br>
+        <p class="p1">FarmEazy</p>
+      </div>
+      <div>
+        <p class="p2">An Integrated crop management system</p>
+      </div>
+      <div>
+        <div>
+        <p class="p3">A one stop solution for farmers</p>
+
+        </div>
+        <div>
+          <p class="p4">empowering them by Technology</p>
+        </div>
+        <hr class="cont-hr">
+      </div>
+      <div class="cont-buttons"> 
+        <a href="{{ url_for('auth') }}">
+        <button  class="glow-on-hover" type="button">
+            Login /  Signup
+        </button>
+        </a>
+      </div>
+    </div>
+  </section>
+  <section class="sec-2" id="aboutus">
+      <div class="container">
+        <div class="text-part">
+            <div class="title">
+                  Mission we <br>
+                  are working on
+            </div>
+            <div class="cont-text">
+              The Integrated Crop Management System (ICMS) is introduced as a holistic solution designed to improve agricultural efficiency, sustainability, and productivity by integrating advanced technologies such as machine learning and data analytics
+              <br>
+              <br>
+              The ICMS stands out for its user-friendly interface and sophisticated backend infrastructure, providing a seamless experience for farmers. At its core, the system employs advanced machine learning (ML) algorithms to analyze vast amounts of data from various sources, such as weather patterns, soil conditions, crop health, and historical agricultural data. These analyses yield valuable insights that can be used to predict crop yields, detect early signs of disease, and optimize farming practices.
+            </div>
+            <div class="cont-icons">
+              <div class="d1">
+                <div>
+                  <img src="static/img/Steps/Frame 83.png">
+                </div>
+                <div style="padding-left: 10%;font-size: 20px;font-family: 'Libre Baskerville';"> 
+                  ML Predictions
+                </div>        
+              </div>
+              <div class="d2">
+                <div>
+                  <img src="static/img/Steps/Frame 82.png">
+                </div>
+                <div style="padding-left: 10%;font-size: 20px;font-family: 'Libre Baskerville';">
+                  Early Warnings
+                </div>
+              </div>
+              <div class="d3">
+                <div>
+                  <img src="static/img/Steps/Frame 81.png">
+                </div>
+                <div style="padding-left: 10%;font-size: 20px;font-family: 'Libre Baskerville';">
+                  Informed Decision Making
+                </div>
+                 
+              </div>
+            </div>
+        </div>
+        <div class="image-part">
+          <div class="m">
+            <div class="image-img1">
+              <img src="static/img/img1.png" class="img1-img1">
+            </div>
+            <div class="image-img2-img3">
+              <div class="i1">
+                <img src="static/img/img2.png" class="i1-img">
+              </div>
+              <div class="i2">
+                <img src="static/img/img3.png" class="i2-img">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </section>
+
+
+  <section class="sec5">
+    <div class="info">
+      <div class="video-sec5"> 
+        <video id="my-video" controls>
+          <source src="static/video/Survey report video of farmer.mp4" type="video/mp4" >
+        </video>
+
+      </div>
+      
+    </div>
+  </section>
+  <section class="sec6" >
+    <div class="box-box">
+      <div class="box-1">
+        <div class="bb1"> 
+          <div>
+            <img src="static/img/Frame 18.png" class="f18">
+          </div>
+          <div>
+            <h2 class="content-h2">Email</h2>
+          </div>
+          <div>
+            <p class="content-para">farmeazy@gmail.com</p>
+          </div>
+        </div>
+        <div class="bb2">
+          <div>
+            <img src="static/img/Frame 19.png" class="f19">
+          </div>
+          <div>
+            <h2 class="content-h2">Phone</h2>
+          </div>
+          <div>
+            <p class="content-para">123-456-7890</p>
+          </div>
+        </div >
+        <div class="bb3">
+          <div>
+            <img src="static/img/Frame 20.png" class="f19">
+          </div>
+          <div>
+            <h2 class="content-h2">Office</h2>
+          </div>
+          <div>
+            <p  class="content-para">Address</p>
+          </div>
+        </div>
+        <div class="bb4"> 
+          <div>
+            <img src="static/img/Frame 21.png" class="f19">
+          </div>
+          <div>
+            <h2 class="content-h2">Social</h2>
+          </div>
+          <div class="socials">
+              <div>
+                <img src="static/img/Icons/Facebook.svg">
+              </div>
+              <div>
+                <img src="static/img/Icons/Instagram.svg">
+              </div>
+              <div>
+                <img src="static/img/Icons/LinkedIn.svg">
+              </div>
+              <div>
+                <img src="static/img/Icons/Twitter.svg"> 
+              </div>
+          </div>
+        </div>
+      </div>
+    <div class="box-2" id="contactus">
+      <div>
+        <p>Email</p>
+        <input type="text" placeholder="Enter your mail here">
+        <p style="margin-top: 20px;">Message</p>
+        <div class="message-box">
+          <textarea placeholder="your message "></textarea>
+        </div>
+        <button class="send-button">
+          send
+        </button>
+      </div>
+    </div>
+  </section>
+</body>
+
+</html>

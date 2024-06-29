@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        font-family: 'roboto', sans-serif;
+    }
+    body{
+        display: flex;
+    }
+    .side-bar{
+        width: 20vw;
+        height: 100vh;
+        background-color: #F6F6FB;
+    }
+    .logo{
+        width: 100%;
+    }
+    .logo img{
+        width: 100%;
+        object-fit: cover;
+    }
+    .menu1{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px;
+        margin-top: 30px;
+    }
+    .opt{
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        padding: 10px;
+        color: #2B2F42
+    }
+    .selected-opt{
+        font-size: 1.1rem;
+        border-right: 5px solid #7166F9;
+        margin-right: -10px;
+    }
+    .selected-opt svg{
+        fill: #7166F9;
+        width: 20px;
+        height: 20px;
+    }
+    .main-content{
+        width: 70vw;
+        height: 80vh;
+        padding: 50px;
+        background-color: #1c1c208d;
+        position: relative;
+    }
+    .main-back{
+        background-image: url('static/imgs/crop1.jpg');
+        background-size: cover;
+        background-position: center;
+        width: 85vw;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+    justify-content: center;
+    }
+    
+    #user-name{
+        font-size: 2rem;
+    }
+    #heading{
+        padding: 20px 0px;
+        color: #575353;
+    }
+
+    .stCell:hover{
+        background-color: #7166F9;
+
+    }
+    .top{
+        display: flex;
+        justify-content: space-between;
+    }
+    .add_rec{
+        padding: 10px 20px;
+        background-color: #7166F9;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .add_rec:hover{
+        background-color: #5A4FCF;
+    }
+    table{
+        margin-top: 40px;
+        width: 100%;
+    }
+    .floating-div{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        display: block;
+    }
+    form{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 0px 60px;
+        margin-top: 20px;
+    }
+    .frow{
+        display: flex;
+        gap: 20px;
+        margin: 2px;
+    }
+    .frow >input{
+        padding: 10px 10px;
+        border-radius: 5px;
+        border: none;
+        flex: 1;
+        background-color: #4b4b4b15;
+    }
+
+    form>button{
+        all: unset;
+        padding: 10px 20px;
+        background-color: #7166F9;
+        color: white;
+        border-radius: 5px;
+        margin-top: 20px;
+        display: block;
+        margin: auto;
+        margin-top: 20px;
+        cursor: pointer;
+    }
+    .box>svg{
+        position: absolute;
+        top: -5px;
+        left: -5px;
+    }
+    a{
+        all: unset;
+        cursor: pointer;
+    }
+    table{
+        background-color: #F6F6FB;
+        padding: 10px;
+        border-radius: 5px;
+        text-align: center;
+    }
+    button{
+        all: unset;
+    }
+    .formheading{
+        text-align: center;
+    }
+</style>
+<body>
+    <div class="side-bar">
+        <div class="logo">
+            <img src="https://picsum.photos/id/684/600/400" alt="">
+        </div>
+        <div class="menu1">
+            <a href="{{ url_for('dashboard') }}">
+            <div class="opt ">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+                    <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z"/>
+                  </svg>
+                Home
+            </div>
+            </a>
+
+            <a href="{{ url_for('records') }}">
+            <div class="opt selected-opt">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+                    <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z"/>
+                  </svg>
+                Records
+            </div>
+            </a>
+
+            <a href="{{ url_for('weather') }}">
+            <div class="opt">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cloudy" viewBox="0 0 16 16">
+                    <path d="M13.405 8.527a5.001 5.001 0 0 0-9.499-1.004A3.5 3.5 0 1 0 3.5 14.5H13a3 3 0 0 0 .405-5.973M8.5 5.5a4 4 0 0 1 3.976 3.555.5.5 0 0 0 .5.445H13a2 2 0 0 1-.001 4H3.5a2.5 2.5 0 1 1 .605-4.926.5.5 0 0 0 .596-.329A4 4 0 0 1 8.5 5.5"/>
+                </svg>
+                Weather
+            </div>
+            </a>
+
+            <a href="{{ url_for('disease') }}">
+            <div class="opt">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-activity" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M6 2a.5.5 0 0 1 .47.33L10 12.036l1.53-4.208A.5.5 0 0 1 12 7.5h3.5a.5.5 0 0 1 0 1h-3.15l-1.88 5.17a.5.5 0 0 1-.94 0L6 3.964 4.47 8.171A.5.5 0 0 1 4 8.5H.5a.5.5 0 0 1 0-1h3.15l1.88-5.17A.5.5 0 0 1 6 2"/>
+                </svg>
+                Disease
+            </div>
+            </a>
+
+            <a href="{{ url_for('yield_prediction') }}">
+            <div class="opt">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-flower3" viewBox="0 0 16 16">
+                    <path d="M11.424 8c.437-.052.811-.136 1.04-.268a2 2 0 0 0-2-3.464c-.229.132-.489.414-.752.767C9.886 4.63 10 4.264 10 4a2 2 0 1 0-4 0c0 .264.114.63.288 1.035-.263-.353-.523-.635-.752-.767a2 2 0 0 0-2 3.464c.229.132.603.216 1.04.268-.437.052-.811.136-1.04.268a2 2 0 1 0 2 3.464c.229-.132.489-.414.752-.767C6.114 11.37 6 11.736 6 12a2 2 0 1 0 4 0c0-.264-.114-.63-.288-1.035.263.353.523.635.752.767a2 2 0 1 0 2-3.464c-.229-.132-.603-.216-1.04-.268M9 4a2 2 0 0 1-.045.205q-.059.2-.183.484a13 13 0 0 1-.637 1.223L8 6.142l-.135-.23a13 13 0 0 1-.637-1.223 4 4 0 0 1-.183-.484A2 2 0 0 1 7 4a1 1 0 1 1 2 0M3.67 5.5a1 1 0 0 1 1.366-.366 2 2 0 0 1 .156.142q.142.15.326.4c.245.333.502.747.742 1.163l.13.232-.265.002a13 13 0 0 1-1.379-.06 4 4 0 0 1-.51-.083 2 2 0 0 1-.2-.064A1 1 0 0 1 3.67 5.5m1.366 5.366a1 1 0 0 1-1-1.732l.047-.02q.055-.02.153-.044.202-.048.51-.083a13 13 0 0 1 1.379-.06q.135 0 .266.002l-.131.232c-.24.416-.497.83-.742 1.163a4 4 0 0 1-.327.4 2 2 0 0 1-.155.142M9 12a1 1 0 0 1-2 0 2 2 0 0 1 .045-.206q.058-.198.183-.483c.166-.378.396-.808.637-1.223L8 9.858l.135.23c.241.415.47.845.637 1.223q.124.285.183.484A1.3 1.3 0 0 1 9 12m3.33-6.5a1 1 0 0 1-.366 1.366 2 2 0 0 1-.2.064q-.202.048-.51.083c-.412.045-.898.061-1.379.06q-.135 0-.266-.002l.131-.232c.24-.416.497-.83.742-1.163a4 4 0 0 1 .327-.4q.07-.074.114-.11l.041-.032a1 1 0 0 1 1.366.366m-1.366 5.366a2 2 0 0 1-.155-.141 4 4 0 0 1-.327-.4A13 13 0 0 1 9.74 9.16l-.13-.232.265-.002c.48-.001.967.015 1.379.06q.308.035.51.083.098.024.153.044l.048.02a1 1 0 1 1-1 1.732zM8 9a1 1 0 1 1 0-2 1 1 0 0 1 0 2"/>
+                </svg>
+                Yield
+            </div>
+            </a>
+
+            <a href="{{ url_for('fertilizer_recommendation') }}">
+            <div class="opt">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-droplet-fill" viewBox="0 0 16 16">
+                    <path d="M8 16a6 6 0 0 0 6-6c0-1.655-1.122-2.904-2.432-4.362C10.254 4.176 8.75 2.503 8 0c0 0-6 5.686-6 10a6 6 0 0 0 6 6M6.646 4.646l.708.708c-.29.29-1.128 1.311-1.907 2.87l-.894-.448c.82-1.641 1.717-2.753 2.093-3.13"/>
+                  </svg>
+                Fertilizer
+            </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="main-back">
+    <div class="main-content">
+        <div class="top">
+            <h2 style="color: white">Record</h2>
+            <button class="add_rec" onclick="addrec();">Add Record</button>
+        </div>
+        <div class="floating-div" style="display: none;">
+            <div class="box">
+                <button onclick="closerec();">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle" viewBox="0 0 16 16">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                    <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
+                </svg>
+                </button>
+                <div class="formheading">
+                    Add Record
+                </div>
+                
+                <form method="POST">
+                    <div class="frow">
+                        <input type="text" name="Season" id="Season" placeholder="Season">
+                        <input type="text" name="Crop" id="Crop" placeholder="Crop">
+                    </div>
+                    <div class="frow">
+                        <input type="text" name="Yield" id="Yield" placeholder="Yield">
+                        <input type="text" name="Expenses" id="Expenses" placeholder="Expenses">
+                        <input type="text" name="Income" id="Income" placeholder="Income">
+                    </div>
+                    <div class="frow">
+                        <input type="text" name="PesticideUsed" id="PesticideUsed" placeholder="Pesticide Used">
+                        <input type="text" name="FertilizerUsed" id="FertilizerUsed" placeholder="Fertilizer Used">
+                    </div>
+                    <div class="frow">
+                        <input type="text" name="Weather" id="Weather" placeholder="Weather">
+                        <input type="text" name="Date" id="Date" placeholder="Date">
+                    </div>
+
+                    <button type="submit" class="upload-btn">Upload</button>
+                </form>
+            </div>
+        </div>
+        <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col" style="padding: 10px;">S. No</th>
+                <th scope="col">Season</th>
+                <th scope="col">Crop</th>
+                <th scope="col">Yield (in Kg)</th>
+                <th scope="col">Expenses (in Rs)</th>
+                <th scope="col">Income (in Rs)</th>
+                <th scope="col">Fertilizer Used</th>
+                <th scope="col">Pesticide Used</th>
+                <th scope="col">Date</th>
+                <th scope="col">Weather</th>
+              </tr>
+            </thead>
+            <tbody>
+            {% for rec in records %}
+              <tr>
+                <th scope="row">{{ rec[0] }}</th>
+                <td>{{ rec[1] }}</td>
+                <td>{{ rec[2] }}</td>
+                <td>{{ rec[3] }}</td>
+                <td>{{ rec[4] }}</td>
+                <td>{{ rec[5] }}</td>
+                <td>{{ rec[6] }}</td>
+                <td>{{ rec[7] }}</td>
+                <td>{{ rec[8] }}</td>
+                <td>{{ rec[9] }}</td>
+              </tr>
+            {% endfor %}
+            </tbody>
+          </table>
+        </div>
+    </div>
+<script>
+    function addrec(){
+        document.querySelector('.floating-div').style.display = 'block';
+    }
+    function closerec(){
+        document.querySelector('.floating-div').style.display = 'none';
+    }
+</script>
+</body>
+</html>
