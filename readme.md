@@ -52,5 +52,5 @@ Special thanks to the contributors who have made this project possible:
 - [@Fraz Khan](https://github.com/Contributor1)
 - [@Pranav Pratyush](https://github.com/Champ2979)
 - [@Pranav Tyagi](https://github.com/PranavTyagi-3)
-- [@Rishabh Sharma](https://github.com/Contributor1)
+- [@Rishabh Sharma](https://github.com/rishabh301)
 - [@Vimukta Dashora](https://github.com/Vimukta26)
