@@ -46,11 +46,11 @@ The ICMS utilizes a client-server architecture:
 ## Contributors
 
 Special thanks to the contributors who have made this project possible:
-- [@Ankit Raha](https://github.com/Ankitraha)
-- [@Ayushi Agarwal](https://github.com/ayushi0111)
-- [@Ayush Bhatt](https://github.com/AyushB21)
-- [@Fraz Khan](https://github.com/Contributor1)
-- [@Pranav Pratyush](https://github.com/Champ2979)
-- [@Pranav Tyagi](https://github.com/PranavTyagi-3)
-- [@Rishabh Sharma](https://github.com/rishabh301)
-- [@Vimukta Dashora](https://github.com/Vimukta26)
+- [Ankit Raha](https://github.com/Ankitraha)
+- [Ayushi Agarwal](https://github.com/ayushi0111)
+- [Ayush Bhatt](https://github.com/AyushB21)
+- [Fraz Khan](https://github.com/Fraz-K19)
+- [Pranav Pratyush](https://github.com/Champ2979)
+- [Pranav Tyagi](https://github.com/PranavTyagi-3)
+- [Rishabh Sharma](https://github.com/rishabh301)
+- [Vimukta Dashora](https://github.com/Vimukta26)
